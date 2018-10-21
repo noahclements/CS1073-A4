@@ -1,3 +1,7 @@
+/**
+	Represents the driver class used to find area/perimeter of circle and triangle badges
+	@author Noah Clements 3585596
+*/
 import java.util.Scanner;
 import java.text.DecimalFormat;
 public class BadgeDriver {
