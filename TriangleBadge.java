@@ -46,11 +46,11 @@ public class TriangleBadge {
 				area = (halfBase * height);
 			}
 		} else if(Math.abs(((sideA*sideA) + (sideB*sideB)) - (sideC*sideC)) < TOLERANCE) { // right-angle triangle if / else if statements
-			area = Math.sqrt((sideA*sideA) + (sideB*sideB));
+			area = (sideA * sideB) / 2;
 		} else if(Math.abs(((sideA*sideA) + (sideC*sideC)) - (sideB*sideB)) < TOLERANCE) {
-			area = Math.sqrt((sideA*sideA) + (sideC*sideC));
+			area = (sideA * sideC) / 2;
 		} else if(Math.abs(((sideB*sideB) + (sideC*sideC)) - (sideA*sideA)) < TOLERANCE) {
-			area = Math.sqrt((sideB*sideB) + (sideC*sideC));
+			area = (sideB * sideC) / 2;
 		} else {													// if they dont dont match the dimensions of the available triangles, it returns -1
 			area = -1;
 		}
