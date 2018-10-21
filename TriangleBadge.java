@@ -37,17 +37,17 @@ public class TriangleBadge {
 			}  else if(sideC == sideA) {
 				area = sideB * Math.sqrt((sideA*sideA)-(0.5(sideB*sideB)) / 2);
 			}
-		} else if() {
-
-			// right-angle triangle TO DO
-			area = 
-
-		} else {
+		} else if((sideA*sideA) + (sideB*sideB) == (sideC*sideC)) { // right-angle triangle if / else if statements
+			area = Math.sqrt((sideA*sideA) + (sideB*sideB));
+		} else if((sideA*sideA) + (sideC*sideC) == (sideB*sideB)) {
+			area = Math.sqrt((sideA*sideA) + (sideC*sideC));
+		} else if((sideB*sideB) + (sideC*sideC) == (sideA*sideA)) {
+			area = Math.sqrt((sideB*sideB) + (sideC*sideC));
+		} else {													// if they dont dont match the dimensions of the available triangles, it returns -1
 			area = -1;
 			System.out.println("Shape of badge is not available.");
 		}
 		return area;
-		// finish
 	}
 
 	public double getPerimeter() {
