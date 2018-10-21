@@ -46,7 +46,8 @@ public class BadgeDriver {
 					max = area;
 				}
 		}
-
+			System.out.println("The badge that requires the most is a ");
+			System.out.println("The amount of material needed is: " + max);
 
 
 
