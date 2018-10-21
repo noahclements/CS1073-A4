@@ -5,7 +5,8 @@ public class BadgeDriver {
 
 		double sideA, sideB, sideC, radius;
 		double area = 0;
-		double max = 0;
+		double maxTriangle = 0;
+		double maxCircle = 0;
 		int choice = 0;
 
 		while(choice != 3) {
@@ -28,11 +29,14 @@ public class BadgeDriver {
 				TriangleBadge t1 = new TriangleBadge(sideA, sideB, sideC);
 
 				if(t1.getArea() == -1) {
-					System.out.println("Shape of badge is not available.");
+					System.out.println("Shape not available.");
 				} else {
 					System.out.println("Material: " + t1.getArea());
 					System.out.println("Thread: " + t1.getPerimeter());
 					area = t1.getArea();
+					if(area > maxTriangle) {
+						maxTriangle = area;
+					}
 				}
 			} else if(choice == 2) {
 				System.out.println("Length of radius (cm): ");
@@ -41,13 +45,19 @@ public class BadgeDriver {
 				System.out.println("Material: " + c1.getMaterialNeeded());
 				System.out.println("Thread: " + c1.getThreadNeeded());
 				area = c1.getMaterialNeeded();
-			} 
-				if(area > max) {
-					max = area;
+				if(area > maxCircle) {
+					maxCircle = area;
 				}
+			} 
+				
 		}
-			System.out.println("The badge that requires the most is a ");
-			System.out.println("The amount of material needed is: " + max);
+			if(maxCircle > maxTriangle) {
+				System.out.println("The badge that requires the most is a Circle");
+				System.out.println("The amount of material needed is: " + maxCircle);
+			} else {
+				System.out.println("The badge that requires the most is a Triangle");
+				System.out.println("The amount of material needed is: " + maxTriangle);
+			}
 
 
 
