@@ -1,7 +1,7 @@
 public class TriangleBadge {
 	double sideA, sideB, sideC;
 	final double TOLERANCE = 1E-14;
-
+	double halfBase = 0;
 	public TriangleBadge(double sideAIn, double sideBIn, double sideCIn) {
 		sideA = sideAIn;
 		sideB = sideBIn;
@@ -32,6 +32,7 @@ public class TriangleBadge {
 		} else if(Math.abs(sideA - sideB) < TOLERANCE || Math.abs(sideB - sideC) < TOLERANCE || Math.abs(sideC - sideA) < TOLERANCE) {
 			// isoceles
 			if(Math.abs(sideA - sideB) < TOLERANCE) {
+
 				area = sideC * Math.sqrt((sideB*sideB)-(0.5*(sideC*sideC)) / 2);
 			}  else if(Math.abs(sideB - sideC) < TOLERANCE) {
 				area = sideA * Math.sqrt((sideC*sideC)-(0.5*(sideA*sideA)) / 2);
