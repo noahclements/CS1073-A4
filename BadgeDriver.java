@@ -19,8 +19,13 @@ public class BadgeDriver {
 			System.out.println("Length of side (cm): ");
 			sideC = sc.nextDouble();
 			TriangleBadge t1 = new TriangleBadge(sideA, sideB, sideC);
-			System.out.println("Material: " + t1.getArea());
-			System.out.println("Thread: " + t1.getPerimeter());
+
+			if(t1.getArea() == -1) {
+				System.out.println("Shape of badge is not available.");
+			} else {
+				System.out.println("Material: " + t1.getArea());
+				System.out.println("Thread: " + t1.getPerimeter());
+			}
 		} else if(choice == 2) {
 			System.out.println("Length of radius (cm): ");
 			radius = sc.nextDouble();

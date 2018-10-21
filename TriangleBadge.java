@@ -44,7 +44,6 @@ public class TriangleBadge {
 			area = Math.sqrt((sideB*sideB) + (sideC*sideC));
 		} else {													// if they dont dont match the dimensions of the available triangles, it returns -1
 			area = -1;
-			System.out.println("Shape of badge is not available.");
 		}
 		return area;
 	}
