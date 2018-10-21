@@ -1,6 +1,7 @@
 public class TriangleBadge {
 	double sideA, sideB, sideC;
 	final double TOLERANCE = 1E-14;
+	double height = 0;
 	double halfBase = 0;
 	public TriangleBadge(double sideAIn, double sideBIn, double sideCIn) {
 		sideA = sideAIn;
@@ -32,19 +33,24 @@ public class TriangleBadge {
 		} else if(Math.abs(sideA - sideB) < TOLERANCE || Math.abs(sideB - sideC) < TOLERANCE || Math.abs(sideC - sideA) < TOLERANCE) {
 			// isoceles
 			if(Math.abs(sideA - sideB) < TOLERANCE) {
-
-				area = sideC * Math.sqrt((sideB*sideB)-(0.5*(sideC*sideC)) / 2);
+				halfBase = sideC / 2;
+				height = Math.sqrt((sideA*sideA)-(halfBase*halfBase));
+				area = (halfBase * height);
 			}  else if(Math.abs(sideB - sideC) < TOLERANCE) {
-				area = sideA * Math.sqrt((sideC*sideC)-(0.5*(sideA*sideA)) / 2);
+				halfBase = sideA / 2;
+				height = Math.sqrt((sideB*sideB)-(halfBase*halfBase));
+				area = (halfBase * height);
 			}  else if(Math.abs(sideC - sideA) < TOLERANCE) {
-				area = sideB * Math.sqrt((sideA*sideA)-(0.5*(sideB*sideB)) / 2);
+				halfBase = sideB / 2;
+				height = Math.sqrt((sideC*sideC)-(halfBase*halfBase));
+				area = (halfBase * height);
 			}
 		} else if(Math.abs(((sideA*sideA) + (sideB*sideB)) - (sideC*sideC)) < TOLERANCE) { // right-angle triangle if / else if statements
-			area = Math.sqrt((sideA*sideA) + (sideB*sideB));
+			area = (sideA * sideB) / 2;
 		} else if(Math.abs(((sideA*sideA) + (sideC*sideC)) - (sideB*sideB)) < TOLERANCE) {
-			area = Math.sqrt((sideA*sideA) + (sideC*sideC));
+			area = (sideA * sideC) / 2;
 		} else if(Math.abs(((sideB*sideB) + (sideC*sideC)) - (sideA*sideA)) < TOLERANCE) {
-			area = Math.sqrt((sideB*sideB) + (sideC*sideC));
+			area = (sideB * sideC) / 2;
 		} else {													// if they dont dont match the dimensions of the available triangles, it returns -1
 			area = -1;
 		}
