@@ -1,7 +1,10 @@
 import java.util.Scanner;
+import java.text.NumberFormat;
 public class BadgeDriver {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		NumberFormat format = NumberFormat.getNumberInstance();
+		format.setMaximumFractionDigits(3);
 
 		double sideA, sideB, sideC, radius;
 		double area = 0;
@@ -31,8 +34,8 @@ public class BadgeDriver {
 				if(t1.getArea() == -1) {
 					System.out.println("Shape not available.");
 				} else {
-					System.out.println("Material: " + t1.getArea());
-					System.out.println("Thread: " + t1.getPerimeter());
+					System.out.println("Material: " + format.format(t1.getArea()));
+					System.out.println("Thread: " + format.format(t1.getPerimeter()));
 					area = t1.getArea();
 					if(area > maxTriangle) {
 						maxTriangle = area;
@@ -42,8 +45,8 @@ public class BadgeDriver {
 				System.out.println("Length of radius (cm): ");
 				radius = sc.nextDouble();
 				CircleBadge c1 = new CircleBadge(radius);
-				System.out.println("Material: " + c1.getMaterialNeeded());
-				System.out.println("Thread: " + c1.getThreadNeeded());
+				System.out.println("Material: " + format.format(c1.getMaterialNeeded()));
+				System.out.println("Thread: " + format.format(c1.getThreadNeeded()));
 				area = c1.getMaterialNeeded();
 				if(area > maxCircle) {
 					maxCircle = area;
@@ -53,10 +56,10 @@ public class BadgeDriver {
 		}
 			if(maxCircle > maxTriangle) {
 				System.out.println("The badge that requires the most is a Circle");
-				System.out.println("The amount of material needed is: " + maxCircle);
+				System.out.println("The amount of material needed is: " + format.format(maxCircle));
 			} else {
 				System.out.println("The badge that requires the most is a Triangle");
-				System.out.println("The amount of material needed is: " + maxTriangle);
+				System.out.println("The amount of material needed is: " + format.format(maxTriangle));
 			}
 
 
