@@ -15,7 +15,7 @@ public class BadgeDriver {
 		int choice = 0;
 
 		while(choice != 3) {	// loop this until user inputs 3
-
+			System.out.println();
 			System.out.println("Select one of the following options:");
 			System.out.println("1 - Enter the information for a triangular badge.");
 			System.out.println("2 - Enter the information for a circular badge.");
