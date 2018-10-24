@@ -35,7 +35,6 @@ public class ArabicToMaya {
 						
 			input = input / 20;	// divides the input by the base
 			
-			//p++;
 			output = "\n" + temp + output;	// adds new line, then adds output to temp
 			// new line is there to seperate the rows
 		}
